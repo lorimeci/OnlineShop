@@ -1,0 +1,31 @@
+﻿@model OnlineShop.Models.Item
+@{
+
+
+    ViewBag.Title = "Item - " + Model.Title;
+}
+<h2>@Model.Title</h2>
+<p>
+    <img alt="@Model.Title"
+         src="@Model.ItemArtUrl" />
+</p>
+<div id="item-details">
+    <p>
+        <em>Category:</em>
+        @Model.Category.Name
+    </p>
+    <p>
+        <em>Producer:</em>
+        @Model.Producer.Name
+    </p>
+    <p>
+        <em>Price:</em>
+        @String.Format("{0:F}",
+Model.Price)
+    </p>
+    
+    <p class="button1">
+        @Html.ActionLink("Add to cart", "AddToCart", "ShoppingCart", new { id = Model.ItemId }, "")
+    </p>
+  
+</div>

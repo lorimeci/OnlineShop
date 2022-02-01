@@ -1,0 +1,110 @@
+﻿<br /><br /><br />
+<div id="carouselBlk">
+    <div id="myCarousel" class="carousel slide">
+        <div class="carousel-inner">
+            <div class="item active">
+                <div class="container">
+                    <a href="/Account/Register">
+                        <img style="width:55%" src="~/Content/images/biznesattire.jpg"  alt="" />
+                    </a>
+                    <div class="carousel-caption">
+                        <h4>Second Thumbnail label</h4>
+                        <p>For a bit of drama and tons of coziness, the oversized turtleneck is a cold-weather staple whether you prefer a swingy, hip-grazing fit or an ultra-roomy design nearly hitting mid-thigh.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="container">
+                    <a href="/Account/Register">
+                        <img style="width:55%"
+                         src="~/Content/images/biznesattire2.jpg" /> 
+                    </a>
+                    <div class="carousel-caption">
+                        <h4>Second Thumbnail label</h4>
+                        <p>For a bit of drama and tons of coziness, the oversized turtleneck is a cold-weather staple whether you prefer a swingy, hip-grazing fit or an ultra-roomy design nearly hitting mid-thigh.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="container">
+                    <a href="/Account/Register">
+                        
+                        <img   style="width:55%" src="~/Content/images/casualwear3.jpg" alt="" />
+                    </a>
+                    <div class="carousel-caption">
+                        <h4>Second Thumbnail label</h4>
+                        <p>For a bit of drama and tons of coziness, the oversized turtleneck is a cold-weather staple whether you prefer a swingy, hip-grazing fit or an ultra-roomy design nearly hitting mid-thigh</p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="item">
+                <div class="container">
+                    <a href="/Account/Register">
+                     
+                        <img   style="width:55%" src="~/Content/images/casualwear3.jpg"  alt="" />
+                    </a>
+                    <div class="carousel-caption">
+                        <h4>Second Thumbnail label</h4>
+                        <p>For a bit of drama and tons of coziness, the oversized turtleneck is a cold-weather staple whether you prefer a swingy, hip-grazing fit or an ultra-roomy design nearly hitting mid-thigh</p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="item">
+                <div class="container">
+                    <a href="/Account/Register">
+                        <img  style="width:55%"  src="~/Content/images/formalwear.jpg"  alt="" />
+                    </a>
+                    <div class="carousel-caption">
+                        <h4>Second Thumbnail label</h4>
+                        <p>For a bit of drama and tons of coziness, the oversized turtleneck is a cold-weather staple whether you prefer a swingy, hip-grazing fit or an ultra-roomy design nearly hitting mid-thigh</p>
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="container">
+                    <a href="/Account/Register">
+                        <img  style="width:55%"  src="~/Content/images/sportswear3.jpg"  alt="" />
+                    </a>
+                    <div class="carousel-caption">
+                        <h4>Second Thumbnail label</h4>
+                        <p>For a bit of drama and tons of coziness, the oversized turtleneck is a cold-weather staple whether you prefer a swingy, hip-grazing fit or an ultra-roomy design nearly hitting mid-thigh.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
+    </div>
+</div>
+<li>@{Html.RenderAction("CategoryMenu", "Store");}</li>
+
+<h3>Top 10 Items In Our Store</h3>
+<ul id="item-list">
+
+    @foreach (var item in Model)
+    {
+
+        <li>
+            <a href="@Url.Action("Details","Store",new { id = item.ItemId })">
+                <img alt="@item.Title" src="@item.ItemArtUrl" />
+                <br />
+
+                <span>@item.Title</span>
+            </a>
+
+            @String.Format("{0:F}", item.Price)$
+            <p class="button1">
+
+                @Html.ActionLink("Add to cart", "AddToCart",
+        "ShoppingCart", new { id = item.ItemId }, new { @class = "btn btn-danger" })
+            </p>
+        </li>
+
+
+
+    }
+
+
+</ul>

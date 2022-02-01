@@ -1,0 +1,16 @@
+﻿
+@model int?
+@{
+    ViewBag.Title = "Checkout Complete";
+    /*metoda complete do marri nji intiger nga useri dhe do e shfaqe si nje lloj leje */
+    /*me poshte do te kete dhe linkun per te blere produkte te tjera*/
+}
+<h2>Checkout Complete</h2>
+<p>Thanks for your order! Your order number is: @Model</p>
+<p>
+    
+    How about shopping for some more Products in our
+    @Html.ActionLink("Store", "Index", "Home")
+                              
+</p>
+
